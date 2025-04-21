@@ -10,6 +10,9 @@
     </div>
 
     <div class="ui main container" style="margin-top: 60px">
+      <% if(locals.error) { %>
+      <div class="ui negative message"><%= error %></div>
+      <% } %>
       <form action="/" method="post" class="ui form">
         <div class="field">
           <label for="message">Message</label>

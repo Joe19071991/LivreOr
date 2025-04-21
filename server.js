@@ -16,7 +16,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-  console.log(req.body);
+  if (req.body.message === undefined || req.body.message === "") {
+    res.render("pages/index", {
+      error: `Vous n'avez pas rentré de message :-(`,
+    });
+  }
 });
 
 app.listen(8885);
